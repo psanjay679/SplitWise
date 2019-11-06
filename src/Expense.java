@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
+
 
 abstract class Expense {
 
@@ -18,12 +18,15 @@ abstract class Expense {
     private List<Split> splits;
     private ExpenseType type;
 
+    public void recalculate() {};
+
     public List<Split> getSplits() {
         return splits;
     }
 
     public void setSplits(List<Split> splits) {
         this.splits = splits;
+        recalculate();
     }
 
     public GeoLocation getLocation() {
@@ -32,6 +35,7 @@ abstract class Expense {
 
     public void addSplits(Split split) {
         this.splits.add(split);
+        recalculate();
     }
 
     public void setLocation(GeoLocation location) {

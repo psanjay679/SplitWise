@@ -6,5 +6,8 @@ public class EqualExpense extends Expense {
         super(name, totalAmount, paidBy);
     }
 
+    @Override
+    public void recalculate() {
 
+    }
 }
